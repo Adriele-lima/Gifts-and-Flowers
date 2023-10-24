@@ -59,10 +59,30 @@
               </li>
             {% endif %}
           </ul>
-          <form class="d-flex">
-            <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+        </div>
+        <div class="row navbar">
+          <div class="col">
+            <form class="d-flex navbar navbar-expand-lg navbar-light bg-light">
+              <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+        <div class="row navbar">
+          <div class="col">
+            <a href="#">
+              <div class="text-center bag-navbar">
+                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                <p class="my-0">
+                  {% if grand_total %}
+                    ${{ grand_total|floatformat:2 }}
+                  {% else %}
+                    $0.00
+                  {% endif %}
+                </p>
+              </div>
+            </a>
+          </div>
         </div>
       </nav>
     </header>
