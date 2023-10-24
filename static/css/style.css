@@ -1,0 +1,11 @@
+.nav-style {
+    padding: 0 !important;
+}
+
+.home {
+    background-size: cover;
+    background-image: url('/static/images/background.jpeg');
+    width: 100vw;
+    height: 100vh;
+    margin: 0 !important;
+}
