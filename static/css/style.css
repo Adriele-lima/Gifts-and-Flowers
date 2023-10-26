@@ -1,17 +1,24 @@
 .nav-style {
     padding: 0 !important;
+    background-color: #E67D87;
+    border-bottom: 3px ridge #EAD4C3;
 }
 
 .home {
     background-size: cover;
-    background-image: url('/static/images/background.jpeg');
+    background-position: bottom;
+    background-image: url('/static/images/home-background.jpg');
     width: 100vw;
     height: 100vh;
     margin: 0 !important;
 }
 
 .bag-navbar {
-    color: #b60007;
+    color: #880D0F;
+}
+
+.bg-flowers {
+    background-image: url('/static/images/background-products.gif');
 }
 
 .navbar-logo {
@@ -22,17 +29,22 @@
 .body-products {
     width: 100vw;
     height: 100%;
-    margin-top: 100px;
+    margin-top: 120px;
     background: #fff;
     overflow: auto;
-    color: rgb(53, 52, 52);
+    color: #36393B;
 }
 
 .products-link {
     text-decoration: none !important;
-    color: rgb(53, 52, 52);
+    color: #36393B;
 }
 
 .products-link:hover {
-    color: #b60007;
+    color: #880D0F;
+}
+
+footer {
+    background-color: #E67D87;
+    border-top: 3px ridge #EAD4C3;
 }
