@@ -36,6 +36,7 @@
                 Products
               </a>
               <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">All products</a></li>
                 <li><a class="dropdown-item" href="#">Hampers</a></li>
                 <li><a class="dropdown-item" href="#">Flowers</a></li>
                 <li><a class="dropdown-item" href="#">Chocolates</a></li>
@@ -76,7 +77,7 @@
                   {% if grand_total %}
                     ${{ grand_total|floatformat:2 }}
                   {% else %}
-                    $0.00
+                    €0.00
                   {% endif %}
                 </p>
               </div>
