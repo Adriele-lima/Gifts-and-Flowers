@@ -18,7 +18,7 @@
                     {% for product in products %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card h-100 border-0">
-                                <a class="products-link" href="#">
+                                <a class="products-link" href="{% url 'view_product' product.id %}">
                                     {% if product.image %}
                                     <img class="card-img-top img-fluid" src="{{ product.image.url }}"
                                         alt="{{ product.name }}">
