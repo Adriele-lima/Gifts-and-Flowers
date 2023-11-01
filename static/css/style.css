@@ -10,7 +10,7 @@
     background-image: url('/static/images/home-background.jpg');
     width: 100vw;
     height: 100vh;
-    margin: 0 !important;
+    margin: 120px 0 0 0 !important;
 }
 
 .bag-navbar {
@@ -47,4 +47,16 @@
 footer {
     background-color: #E67D87;
     border-top: 3px ridge #EAD4C3;
+}
+
+.welcome-image {
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.home-shop-box {
+    background-size: cover;
+    height: auto;
+    max-width: 100%;
 }
