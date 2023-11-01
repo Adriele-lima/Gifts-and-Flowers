@@ -37,9 +37,9 @@
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="{% url 'products' %}">All products</a></li>
-                <li><a class="dropdown-item" href="#">Hampers</a></li>
-                <li><a class="dropdown-item" href="#">Flowers</a></li>
-                <li><a class="dropdown-item" href="#">Chocolates</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}?category=hampers">Hampers</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}?category=flowers">Flowers</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' %}?category=chocolates">Chocolates</a></li>
               </ul>
             </li>
             {% if request.user.is_authenticated %}
