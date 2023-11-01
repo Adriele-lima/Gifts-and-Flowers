@@ -63,9 +63,17 @@
               </li>
             {% endif %}
           </ul>
-          <form class="d-flex nav-item">
-            <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+          <form class="d-flex nav-item" method="GET" action="{% url 'products' %}">
+            <div class="input-group w-100">
+              <input class="form-control mr-2" type="text" placeholder="Search" aria-label="Search" name="q">
+                <div class="input-group-append">
+                    <button class="btn btn-danger" type="submit">
+                        <span class="icon">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
           </form>
         </div>
         <div class="row navbar">
