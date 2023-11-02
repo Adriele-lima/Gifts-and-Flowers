@@ -73,3 +73,9 @@ footer {
 .btn-top-link {
     cursor: pointer;
 }
+
+.bag-page {
+    width: 100vw;
+    height: 100vh;
+    margin: 120px 0 0 0 !important;
+}
