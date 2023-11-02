@@ -13,8 +13,22 @@
     margin: 120px 0 0 0 !important;
 }
 
-.bag-navbar {
+.bag-navbar-empty {
+    color: #36393B;
+}
+
+.bag-navbar-full {
     color: #880D0F;
+}
+
+.bag-navbar-empty:hover {
+    color: #19191a;
+    text-decoration: none;
+}
+
+.bag-navbar-full:hover {
+    color: #af2f31;
+    text-decoration: none;
 }
 
 .bg-flowers {
