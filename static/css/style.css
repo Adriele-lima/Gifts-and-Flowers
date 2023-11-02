@@ -60,3 +60,16 @@ footer {
     height: auto;
     max-width: 100%;
 }
+
+.btn-top {
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    margin-bottom: 200px;
+}
+
+.btn-top-link {
+    cursor: pointer;
+}
