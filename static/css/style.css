@@ -92,4 +92,11 @@ footer {
     width: 100vw;
     height: 100vh;
     margin: 120px 0 0 0 !important;
+    overflow: auto;
+}
+
+.bag_size_image {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
 }
