@@ -100,3 +100,17 @@ footer {
     height: 200px;
     background-size: cover;
 }
+
+.adjust_qty_btn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.qty-bag-form {
+    width: 40%;
+}
+
+.update-link, .remove-item {
+    cursor: pointer;
+}
