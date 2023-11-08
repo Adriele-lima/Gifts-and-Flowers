@@ -114,3 +114,20 @@ footer {
 .update-link, .remove-item {
     cursor: pointer;
 }
+
+.message-container {
+    position: fixed;
+    top: 130px;
+    right: 10px;
+    z-index: 99999999999;
+    border: 1px ridge #EAD4C3;
+    box-shadow: 1px 1px #EAD4C3;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
