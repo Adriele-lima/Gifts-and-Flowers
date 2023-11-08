@@ -14,7 +14,7 @@ SECRET_KEY = 'p@ei#69*b*zz3u4yie-$()@cy^l(+x9&@6ypx+r0lm(3%_9hr7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-adrielelima-giftsandflo-88810llmx5b.ws-eu105.gitpod.io']
+ALLOWED_HOSTS = ['8000-adrielelima-giftsandflo-88810llmx5b.ws-eu106.gitpod.io']
 
 
 # Application definition
