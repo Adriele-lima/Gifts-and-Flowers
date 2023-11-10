@@ -129,10 +129,12 @@
 <script type="text/javascript">
 
     // Update quantity on click
-    $('.update-link').click(function(e) {
-        var form = $('.update-form');
-        form.submit();
-    })
+    $(document).ready(function () {
+        $('.update-link').on('click', function () {
+            var form = $(this).closest('tr').find('.update-form');
+            form.submit();
+        });
+    });
 
     // Remove item and reload on click
     $('.remove-item').click(function(e) {
