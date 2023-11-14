@@ -120,6 +120,13 @@
         </div>
     </div>
 </div>
+<div id="loading-overlay">
+    <h1 class="text-light logo-font loading-spinner">
+        <span class="icon">
+            <i class="fas fa-3x fa-sync-alt fa-spin"></i>
+        </span>
+    </h1>
+</div>
 {% endblock %}
 
 {% block postloadjs %}
@@ -179,6 +186,8 @@
         ev.preventDefault();
         card.update({ 'disabled': true});
         $('#submit-button').attr('disabled', true);
+        $('#payment-form').fadeToggle(100);
+        $('#loading-overlay').fadeToggle(100);
         stripe.confirmCardPayment(clientSecret, {
             payment_method: {
                 card: card,
@@ -192,6 +201,8 @@
                     </span>
                     <span>${result.error.message}</span>`;
                 $(errorDiv).html(html);
+                $('#payment-form').fadeToggle(100);
+                $('#loading-overlay').fadeToggle(100);
                 card.update({ 'disabled': false});
                 $('#submit-button').attr('disabled', false);
             } else {
