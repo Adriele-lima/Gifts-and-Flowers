@@ -242,3 +242,15 @@ footer {
     margin: 0;
     height: 100%;
 }
+
+/* Country dropdown menu */
+
+select,
+select option {
+    color: #36393B;
+}
+
+select:invalid,
+select option[value=""] {
+    color: #727272 !important;
+}
