@@ -255,6 +255,8 @@ select option[value=""] {
     color: #727272 !important;
 }
 
+/* Allauth */
+
 .allauth {
     width: 100vw;
     height: 100vh;
@@ -265,4 +267,11 @@ select option[value=""] {
 
 .login-allauth {
     width: auto;
+}
+
+/* Order History - My profile */
+
+.order-history {
+    max-height: 416px;
+    overflow-y: auto;
 }
