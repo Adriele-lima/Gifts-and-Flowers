@@ -254,3 +254,15 @@ select:invalid,
 select option[value=""] {
     color: #727272 !important;
 }
+
+.allauth {
+    width: 100vw;
+    height: 100vh;
+    margin-top: 120px;
+    overflow: auto;
+    color: #36393B;
+}
+
+.login-allauth {
+    width: auto;
+}
