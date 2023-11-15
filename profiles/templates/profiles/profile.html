@@ -9,4 +9,37 @@
             <hr class="w-50 mb-1">
         </div>
     </div>
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            <p class="font-weight-bold">Default Delivery Information</p>
+            <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn btn-danger text-uppercase float-right"><i class="fa-solid fa-pen-to-square"></i> Update Information</button>
+            </form>
+        </div>
+        <div class="col-12 col-lg-6">
+            <p class="font-weight-bold">Order History</p>
+            {{ orders }}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+        let countrySelected = $('#id_default_country').val();
+        if(!countrySelected) {
+            $('#id_default_country').css('color', '#727272');
+        };
+        $('#id_default_country').change(function() {
+            countrySelected = $(this).val();
+            if(!countrySelected) {
+                $(this).css('color', '#727272');
+            } else {
+                $(this).css('color', '#36393B');
+            }
+        });
+    </script>
 {% endblock %}
