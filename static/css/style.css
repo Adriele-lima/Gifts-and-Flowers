@@ -275,3 +275,17 @@ select option[value=""] {
     max-height: 416px;
     overflow-y: auto;
 }
+
+/* Add product */
+
+.add-product input, 
+.add-product textarea, 
+.add-product select {
+    color: #36393B;
+    border: 1px solid #36393B;
+    border-radius: .25rem;
+}
+
+.add-product label {
+    font-weight: bold;
+}
