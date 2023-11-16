@@ -5,18 +5,18 @@
 <div class="container-fluid bag-page text-center bg-flowers">
     <div class="row">
         <div class="col">
-            <h2 class="logo-font mt-3 text-uppercase">Add a new Product</h2>
+            <h2 class="logo-font mt-3 text-uppercase">Edit a Product</h2>
             <hr class="w-50 mb-1">
         </div>
     </div>
     <div class="row d-flex justify-content-center">
         <div class="col-8">
-            <form method="POST" action="{% url 'add_product' %}" class="form mt-4 add-edit-product" enctype="multipart/form-data">
+            <form method="POST" action="{% url 'edit_product' product.id %}" class="form mt-4 add-edit-product" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form | crispy }}
-                <div class="text-right mb-4">
+                <div class="text-right">
                     <a class="btn btn-danger" href="{% url 'products' %}">Cancel</a>
-                    <button class="btn btn-danger" type="submit">Add Product</button>
+                    <button class="btn btn-danger" type="submit">Update Product</button>
                 </div>
             </form>
         </div>     

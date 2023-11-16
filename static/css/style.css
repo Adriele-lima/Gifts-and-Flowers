@@ -278,14 +278,14 @@ select option[value=""] {
 
 /* Add product */
 
-.add-product input, 
-.add-product textarea, 
-.add-product select {
+.add-edit-product input, 
+.add-edit-product textarea, 
+.add-edit-product select {
     color: #36393B;
     border: 1px solid #36393B;
     border-radius: .25rem;
 }
 
-.add-product label {
+.add-edit-product label {
     font-weight: bold;
 }
