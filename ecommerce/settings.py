@@ -17,7 +17,7 @@ DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
     'localhost',
-    'https://gifts-and-flowers-6d75002e0957.herokuapp.com/'
+    'gifts-and-flowers-6d75002e0957.herokuapp.com'
     ]
 
 
