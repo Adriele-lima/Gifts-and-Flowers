@@ -114,40 +114,43 @@
         </div>
     {% endif %}
 
-    {% block page_header %}
-    {% endblock %}
-
     {% block content %}
     {% endblock %}
 
+    <footer class="footer">
+      <div class="row">
+        <div class="col-6 text-center">
+          <h2 class="text-uppercase">Stay in touch:</h2>
+          <p>Follow us:
+            <a href="https://www.facebook.com/" target="_blank" 
+              class="footer-social-link"><i class="fab fa-facebook-square ms-3"></i>
+            </a>
+              <a href="https://www.instagram.com/" target="_blank" 
+                class="footer-social-link"><i class="fab fa-instagram-square ms-3"></i>
+              </a>
+              <a href="https://www.youtube.com/" target="_blank" 
+                class="footer-social-link"><i class="fab fa-youtube-square ms-3"></i>
+              </a>
+          </p>
+        </div>
+        <div class="col-6 text-center">
+          <h2 class="text-uppercase">Subscribe:</h2>
+                <p>Get exclusive offers and discount by subscribing to our monthly newsletter!</p>
+        </div>
+      </div>
+    </footer>
     {% block postloadjs %}
     <script type="text/javascript">
       $('.toast').toast('show');
     </script>
+    <!-- Mailchimp signup form here -->
+    <script id="mcjs">
+      ! function (c, h, i, m, p) {
+        m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m,
+          p)
+      }(document, "script",
+        "https://chimpstatic.com/mcjs-connected/js/users/773fa48b4e82b95018d17cb63/08b8474c07d5a6f36032e1535.js");
+    </script>
     {% endblock %}
-    <footer class="container-wrapper">
-      <div class="container quotes-container content-container">
-        <section class="footer">
-          <div class="row">
-            <div class="col-12 page-header mb-4">
-              <h2 class="text-uppercase">Stay in touch:</h2>
-              <hr class="block-divider block-divider--short">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12 col-md-6">
-              <h3>Social</h3>
-              <p>Keep up to date with all our latest offers</p>
-              <a href="#" target="_blank"><i class="fab fa-facebook-square"></i> Follow us on Facebook!</a>
-            </div>
-            <div class="col-12 col-md-6">
-              <h2>Subscribe!</h2>
-              <p>Get exclusive offers and discount by subscribing to our monthly newsletter!</p>
-              <!-- Mailchimp signup form here -->
-            </div>
-          </div>
-        </section>
-      </div>
-    </footer>
   </body>
 </html>
