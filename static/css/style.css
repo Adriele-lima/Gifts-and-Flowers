@@ -47,7 +47,7 @@
 .body-products {
     width: 100vw;
     height: 100%;
-    margin-top: 120px;
+    margin-top: 120px !important;
     background: #fff;
     overflow: auto;
     color: #36393B;
@@ -85,7 +85,7 @@ footer {
     position: fixed;
     bottom: 10px;
     right: 10px;
-    margin-bottom: 200px;
+    margin-bottom: 150px !important;
 }
 
 .btn-top-link {
@@ -264,7 +264,7 @@ select option[value=""] {
 .allauth {
     width: 100vw;
     height: 100vh;
-    margin-top: 120px;
+    margin-top: 120px !important;
     overflow: auto;
     color: #36393B;
 }
@@ -318,4 +318,15 @@ select option[value=""] {
     background-color: #dc3545;
     border-color: #dc3545;
     border-radius: 0;
+}
+
+/* Mailchimp */
+
+#mce-EMAIL {
+    border-radius: 5px !important;
+    padding: 3px !important;
+}
+
+#mc_embed_signup #mce-success-response {
+    color: #36393B !important;
 }
