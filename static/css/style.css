@@ -1,3 +1,7 @@
+* {
+    margin: 0 !important;
+}
+
 .nav-style {
     padding: 0 !important;
     background-color: #E67D87;
@@ -314,3 +318,4 @@ select option[value=""] {
     background-color: #dc3545;
     border-color: #dc3545;
     border-radius: 0;
+}
