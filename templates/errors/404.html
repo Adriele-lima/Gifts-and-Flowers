@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container-fluid home">
+        <div class="row welcome-image align-items-center">
+            <div class="col-5 display-flex-end home-shop-box">
+                <div class="col-12 my-auto">
+                    <h1 class="display-4 logo-font font-weight-bold text-dark">
+                        The page you are looking for isn't available
+                    </h1>
+                    <div class="my-5">
+                        <h4>
+                            <a href="{% url 'products' %}" 
+                                class="btn btn-lg btn-danger text-uppercase py-3">
+                                    Return to shop
+                            </a>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
