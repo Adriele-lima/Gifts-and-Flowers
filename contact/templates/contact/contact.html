@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="body-products">
+    <div class="container-fluid bg-flowers d-flex justify-content-center flex-column align-items-center">
+        <div class="row">
+            <div class="col-12">
+                <div class="col">
+                    <h2 class="logo-font text-uppercase pb-2">Contact-us</h2>
+                    <hr class="mb-1">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 text-center">
+                <h4 class="font-weight-bold p-2">Customer Care opening hours</h4>
+                <p class="text-uppercase p-2">Standard opening hours</p>
+                <p class="p-2">Monday to Friday: 8.30am - 7pm</p>
+                <p class="p-2">Saturday & Sunday: 8.45am- 5pm</p>
+                <p class="p-2">Bank Holidays: 9am - 4pm</p>
+                <p class="p-2">Christmas Day & Easter Sunday: Closed</p>
+                <p class="font-weight-bold p-2">Call +353 0900 151 123</p>
+            </div>
+            <div class="col-4 text-center">
+                <h4 class="font-weight-bold p-2">Frequently asked questions</h4>
+                <div class="accordion" id="accordionExample">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-dark font-weight-bold"
+                                    type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                                    aria-controls="collapseOne">
+                                    How do I track my delivery?
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                You will receive the tracking number on your email. Just copy it and paste on the
+                                parcel's tracking website
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block collapsed text-dark font-weight-bold"
+                                    type="button" data-toggle="collapse" data-target="#collapseTwo"
+                                    aria-expanded="false" aria-controls="collapseTwo">
+                                    How long will my delivery take?
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                Usually delivered within 4 working days 8am - 9pm. Free when you spend €50 or more.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block collapsed text-dark font-weight-bold"
+                                    type="button" data-toggle="collapse" data-target="#collapseThree"
+                                    aria-expanded="false" aria-controls="collapseThree">
+                                    Do you offer any discounts or coupons?
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                We have some special offers and cupons from time to time. If you would like to
+                                receive a notification about it, don't forget to subscribe on our newsletter!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 text-center">
+                <form>
+                    <h4 class="font-weight-bold p-2">How can we help?</h4>
+                    <div class="form-group p-2">
+                      <label for="first-name">First name</label>
+                      <input type="text" class="form-control" id="first-name" aria-describedby="first-name" placeholder="First name">
+                    </div>
+                    <div class="form-group p-2">
+                        <label for="surname">Surname</label>
+                        <input type="text" class="form-control" id="surname" aria-describedby="surname" placeholder="Surname">
+                      </div>
+                    <div class="form-group p-2">
+                      <label for="email">Email</label>
+                      <input type="email" class="form-control" id="email" placeholder="Email">
+                    </div>
+                    <div class="form-group p-2">
+                        <label for="text"></label>
+                        <textarea class="form-control" id="text" rows="3"></textarea placeholder="Write here your query...">
+                    </div>
+                    <button type="submit" class="btn btn-danger">Submit</button>                    
+                  </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
