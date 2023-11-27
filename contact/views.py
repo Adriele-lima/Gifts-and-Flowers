@@ -9,9 +9,7 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            # You can add additional logic here, like sending emails, etc.
-            print(form)
-            return redirect('contact_success_page')  # Redirect to a success page
+            return redirect('contact_success_page')
     else:
         form = ContactForm()
 
