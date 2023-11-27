@@ -330,3 +330,10 @@ select option[value=""] {
 #mc_embed_signup #mce-success-response {
     color: #36393B !important;
 }
+
+/* Contact Page */
+
+.icon-success-contact{
+    font-size: 200px;
+    color: #dc3546b0;
+}

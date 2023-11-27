@@ -64,6 +64,9 @@
                 <a href="{% url 'account_login' %}" class="nav-link">Login</a>
               </li>
             {% endif %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+            </li>
           </ul>
           <form class="d-flex nav-item" method="GET" action="{% url 'products' %}">
             <div class="input-group w-100">
