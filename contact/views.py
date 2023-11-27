@@ -1,5 +1,4 @@
-from django.shortcuts import render, redirect, reverse
-from profiles.models import UserProfile
+from django.shortcuts import render, redirect
 from .forms import ContactForm
 
 
