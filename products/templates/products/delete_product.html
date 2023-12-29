@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid bag-page text-center bg-flowers">
+    <div class="row">
+        {% if user.is_authenticated %}
+        <div class="col">
+            <h2 class="logo-font mt-3 text-uppercase">Confirm Deletion</h2>
+            <hr class="w-50 mb-1">
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center text-left">
+        <div class="col-6">
+            
+            <div class="container alert alert-danger text-center mt-3">
+                <p>Are you sure you want to delete "{{ product.name }}"?</p>
+                <form method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn text-danger">Delete</button>
+                    <a href="{% url 'home' %}" class="btn text-danger">Cancel</a>
+                </form>
+            </div>
+        {% else %}
+        <div class="col">
+            <h2 class="logo-font mt-3 text-uppercase">Failed!</h2>
+            <hr class="w-50 mb-1">
+        </div>
+    </div>
+        <div class="row d-flex justify-content-center text-left">
+            <div class="col-6">
+            <p class="text-center mt-5">Sorry, to access this page you need to be a member, please <a class="link"
+                    href="{% url 'account_login' %}">log in now.</a> If you have not created an account yet, then <a
+                    class="link" href="{% url 'account_signup' %}">sign up first.</a></p>
+
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

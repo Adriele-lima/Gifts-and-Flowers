@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
+from django.views import View
 from .models import Product, Category
 from .forms import ProductForm
 
@@ -118,13 +119,15 @@ def edit_product(request, product_id):
     return render(request, template, context)
 
 
-@login_required
-def delete_product(request, product_id):
-    """ Delete a product from the store """
-    if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
-        return redirect(reverse('home'))
-    product = get_object_or_404(Product, pk=product_id)
-    product.delete()
-    messages.success(request, 'Product deleted!')
-    return redirect(reverse('products'))
+class DeleteProduct(View):
+
+    def get(self, request, product_id):
+        product = get_object_or_404(Product, pk=product_id)
+        context = {'product': product}
+        return render(request, 'products/delete_product.html', context)
+
+    def post(self, request, product_id):
+        product = get_object_or_404(Product, pk=product_id)
+        product.delete()
+        messages.success(request, 'Your product was successfully deleted!')
+        return redirect(reverse('products'))
