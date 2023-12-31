@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid bag-page text-center bg-flowers">
+    <div class="row">
+        <div class="col">
+            <h2 class="logo-font mt-3 text-uppercase">Wishlist</h2>
+            <hr class="w-50 mb-1">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            {% if user.is_authenticated %}
+                {% if wishlist %}
+                    <div class="table-responsive rounded">
+                        <table class="table table-sm table-borderless">
+                            <thead class="text-black">
+                                <tr>
+                                    <th scope="col">Product Info</th>
+                                    <th scope="col"></th>
+                                    <th scope="col">Price</th>
+                                </tr>
+                            </thead>
+                            {% for item in wishlist %}
+                                <tr>
+                                    <td class="p-3">
+                                        {% if item.image %}
+                                            <a class="products-link" href="{% url 'view_product' item.id %}">
+                                                <img class="bag_size_image" src="{{ item.image.url }}" alt="{{ item.name }}">
+                                            </a>
+                                        {% else %}
+                                            <a class="products-link" href="{% url 'view_product' item.id %}">
+                                                <img class="bag_size_image" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.name }}">
+                                            </a>
+                                        {% endif %}
+                                    </td>
+                                    <td class="py-3">
+                                        <a class="products-link" href="{% url 'view_product' item.id %}">
+                                            <p class="my-0"><strong>{{ item.name }}</strong></p>
+                                            <p class="my-0 small text-muted">SKU: {{ item.sku|upper }}</p>
+                                        </a>
+                                    </td>
+                                    <td class="py-3">
+                                        <p class="my-0">€{{ item.price }}</p>
+                                    </td>
+                                    <td class="py-3 adjust_qty_btn">
+                                    <hr class="mb-1">
+                            {% endfor %}
+                            <tr>
+                                <td colspan="5" class="text-right">
+                                    <a href="{% url 'products' %}" class="btn btn-danger btn-lg">
+                                        <span class="icon">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </span>
+                                        <span class="text-uppercase">Back to Products list</span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                {% else %}
+                    <p class="lead mb-5 mt-5">Your wishlist is empty.</p>
+                    <p>Wishlist: {{ product.user_wishlist }}</p>
+                    <a href="{% url 'products' %}" class="btn btn-lg btn-danger">
+                        <span class="icon">
+                            <i class="fas fa-chevron-left"></i>
+                        </span>
+                        <span class="text-uppercase">View products list</span>
+                    </a>
+                {% endif %}
+            {% else %}
+                <p>Please log in to access your wishlist.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

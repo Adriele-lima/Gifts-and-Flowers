@@ -24,6 +24,18 @@
                         <h4 class="mb-0 font-weight-bold">{{ product.name }}</h4>
                         <hr>
                         <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}</p>
+                        {% if user.is_authenticated %}
+                            <form action="{% url 'add_to_wishlist' product.id %}" method="POST" class="d-inline">
+                                {% csrf_token %}
+                                {% if product_id in wishlist %}
+                                <button type="submit" name="wishlist_btn" value="Add to wishlist" class="wishlist_btn">
+                                    </button>
+                                {% else %}
+                                <button type="submit" name="wishlist_btn" value="{{ product.id }}" class="wishlist_btn">
+                                    <i class="fa-regular fa-heart"></i></button>
+                                {% endif %}
+                            </form>
+                        {% endif %}
                         {% if request.user.is_superuser %}
                             <small>
                                 <a href="{% url 'edit_product' product.id %}">Edit</a> | 

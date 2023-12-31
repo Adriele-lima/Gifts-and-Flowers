@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
@@ -131,3 +131,21 @@ class DeleteProduct(View):
         product.delete()
         messages.success(request, 'Your product was successfully deleted!')
         return redirect(reverse('products'))
+
+
+@login_required
+def add_to_wishlist(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    if product.user_wishlist.filter(id=request.user.id).exists():
+        product.user_wishlist.remove(request.user)
+        messages.success(
+            request,
+            f'{ product.name } removed from your Wishlist'
+        )
+    else:
+        product.user_wishlist.add(request.user)
+        messages.success(
+            request,
+            f'{ product.name } added to your Wishlist'
+        )
+    return HttpResponseRedirect(request.META["HTTP_REFERER"])
