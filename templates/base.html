@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
 
     <title>Gifts and Flowers</title>
   </head>
@@ -124,73 +125,79 @@
     {% endblock %}
 
     <footer class="footer">
-      <div class="row m-0">
-        <div class="col-4 p-2">
-          <h4 class="text-uppercase">Stay in touch:</h4>
-        </div>
-        <div class="col-8 d-flex align-items-center p-0">
-          <p>
-            <a href="https://www.facebook.com/" target="_blank" class="footer-social-link text-dark">
-              <i class="fab fa-facebook-square ms-3"></i>
-            </a> Follow us on facebook!
-          </p>
-        </div>
-      </div>
-      <hr class="m-0">
-      <div class="row m-0">
-        <div class="col-4 p-2 m-0">
-          <h4 class="text-uppercase">Subscribe:</h4>
-          <small>Get exclusive offers and discount by subscribing to our monthly newsletter!</small>
-        </div>
-        <div class="col-8 m-0">
-          <div id="mc_embed_shell">
-            <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
-            <div id="mc_embed_signup">
-              <form
-                action="https://herokuapp.us8.list-manage.com/subscribe/post?u=773fa48b4e82b95018d17cb63&amp;id=d4afb7120b&amp;f_id=002e77e0f0"
-                method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate m-0"
-                target="_blank">
-                <div id="mc_embed_signup_scroll">
-                  <div class="row">
-                    <div class="col-6 p-0">
-                      <div class="mc-field-group"><label for="mce-EMAIL"><small>Endereço de e-mail (required)
-                          </small><span class="asterisk enable-rounded">*</span></label><input type="email" name="EMAIL"
-                          class="required email" id="mce-EMAIL" required="" value="">
-                      </div>
-                      <div id="mce-responses" class="clear foot">
-                        <div class="response" id="mce-error-response" style="display: none;"></div>
-                        <div class="response" id="mce-success-response" style="display: none;"></div>
-                      </div>
-                      <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                        /* real people should not fill this in and expect good things - do not remove this or risk form
-                        bot
-                        signups */
-                        <input type="text" name="b_773fa48b4e82b95018d17cb63_d4afb7120b" tabindex="-1">
-                      </div>
-                    </div>
-                    <div class="col-6 d-flex align-items-center">
-                      <div class="optionalParent">
-                        <div class="clear foot">
-                          <input type="submit" name="subscribe" id="mc-embedded-subscribe"
-                            class="btn btn-danger border-0 text-uppercase" value="Subscribe">
-                          <p style="margin: 0px auto;"><a href="http://eepurl.com/iEOKgk"
-                              title="Mailchimp - email marketing made easy and fun"><span
-                                style="display: inline-block; background-color: transparent; border-radius: 4px;"><img
-                                  class="refferal_badge"
-                                  src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg"
-                                  alt="Intuit Mailchimp"
-                                  style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;"></span></a>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </form>
+      <div class="accordion" id="accordionExample">
+        <div class="card border-0">
+          <div class="card-header p-0" id="headingOne">
+            <h2 class="mb-0">
+              <button class="btn btn-link btn-block text-left text-dark footer rounded-0" type="button"
+                data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <h4 class="text-uppercase">Stay in touch:</h4>
+              </button>
+            </h2>
+          </div>
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+              <a href="https://www.facebook.com/" target="_blank" class="footer-social-link text-muted">
+                <i class="fab fa-facebook-square ms-3"></i> Follow us on facebook!
+              </a>
             </div>
           </div>
         </div>
-      </div>
+        <div class="card border-0">
+          <div class="card-header p-0" id="headingTwo">
+            <h2 class="mb-0">
+              <button class="btn btn-link btn-block text-left collapsed text-dark footer" type="button"
+                data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <h4 class="text-uppercase">Subscribe:</h4>
+                <small>Get exclusive offers and discount by subscribing to our monthly newsletter!</small>
+              </button>
+            </h2>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body mobile">
+              <div id="mc_embed_signup">
+                <form
+                  action="https://herokuapp.us8.list-manage.com/subscribe/post?u=773fa48b4e82b95018d17cb63&amp;id=d4afb7120b&amp;f_id=002e77e0f0"
+                  method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                  class="validate m-0 form-group" target="_blank">
+                  <div id="mc_embed_signup_scroll">
+                    <div class="row">
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="mc-field-group"><label for="mce-EMAIL"><small>Endereço de e-mail (required)
+                            </small><span class="asterisk enable-rounded">*</span></label><input type="email"
+                            name="EMAIL" class="required email" id="mce-EMAIL" required="" value="">
+                        </div>
+                        <div id="mce-responses" class="clear foot">
+                          <div class="response" id="mce-error-response" style="display: none;"></div>
+                          <div class="response" id="mce-success-response" style="display: none;"></div>
+                        </div>
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                          /* real people should not fill this in and expect good things - do not remove this or risk
+                          form
+                          bot
+                          signups */
+                          <input type="text" name="b_773fa48b4e82b95018d17cb63_d4afb7120b" tabindex="-1">
+                        </div>
+                      </div>
+                      <div class="col-6 d-flex align-items-center">
+                        <input type="submit" name="subscribe" id="mc-embedded-subscribe"
+                          class="btn btn-danger border-0 text-uppercase m-0" value="Subscribe">
+                        <p style="margin: 0px auto;"><a href="http://eepurl.com/iEOKgk"
+                            title="Mailchimp - email marketing made easy and fun"><span
+                              style="display: inline-block; background-color: transparent; border-radius: 4px;"><img
+                                class="refferal_badge"
+                                src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg"
+                                alt="Intuit Mailchimp"
+                                style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;"></span></a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
     {% block postloadjs %}
