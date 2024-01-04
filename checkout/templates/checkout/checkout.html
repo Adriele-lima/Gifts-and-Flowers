@@ -12,13 +12,13 @@
     </div>
     <div class="row">
         <div class="col-12 col-lg-6 order-lg-last mb-5">
-            <p class="text-muted font-weight-bold">Order Summary ({{ product_count }})</p>
+            <p class="text-dark font-weight-bold">Order Summary ({{ product_count }})</p>
             <div class="row">
                 <div class="col-7 offset-2">
-                    <p class="mb-1 mt-0 small text-muted">Item</p>
+                    <p class="mb-1 mt-0 text-dark"><strong>Item</strong></p>
                 </div>
                 <div class="col-3 text-right">
-                    <p class="mb-1 mt-0 small text-muted">Subtotal</p>
+                    <p class="mb-1 mt-0 text-dark"><strong>Subtotal</strong></p>
                 </div>
             </div>
             {% for item in bag_items %}
@@ -33,22 +33,22 @@
                         </a>
                     </div>
                     <div class="col-7">
-                        <a class="text-muted" href="{% url 'view_product' item.product.id %}">
-                            <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                        <a class="text-dark" href="{% url 'view_product' item.product.id %}">
+                            <p class="my-0">{{ item.product.name }}</p>
                         </a>
-                        <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
+                        <p class="my-0 small text-dark">Qty: {{ item.quantity }}</p>
+                        <hr class="mb-1">
                     </div>
                     <div class="col-3 text-right">
-                        <p class="my-0 small text-muted">€{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                        <p class="my-0 small text-dark">€{{ item.product.price | calc_subtotal:item.quantity }}</p>
                     </div>
                 </div>
             {% endfor %}
-            <hr class="my-0">
             <div class="row text-right">
                 <div class="col-7 offset-2">
                     <p class="my-0">Order Total:</p>
                     <p class="my-0">Delivery:</p>
-                    <p class="my-0">Grand Total:</p>
+                    <p class="my-0 font-weight-bold">Grand Total:</p>
                 </div>
                 <div class="col-3">
                     <p class="my-0">€{{ total | floatformat:2 }}</p>
@@ -58,7 +58,7 @@
             </div>
         </div>
         <div class="col-12 col-lg-6">
-            <p class="text-muted font-weight-bold">Please fill out the form below to complete your order</p>
+            <p class="text-dark font-weight-bold">Please fill out the form below to complete your order</p>
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
                 <fieldset class="rounded px-3 mb-5">

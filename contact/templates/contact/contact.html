@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="row d-flex justify-content-between">
-            <div class="col-4 text-center mt-0">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center mt-0">
                 <h4 class="font-weight-bold p-2">Customer Care opening hours</h4>
                 <p class="text-uppercase p-2">Standard opening hours</p>
                 <p class="p-2">Monday to Friday: 8.30am - 7pm</p>
@@ -23,7 +23,7 @@
                 <p class="p-2">Christmas Day & Easter Sunday: Closed</p>
                 <p class="font-weight-bold p-2">Call +353 0900 151 123</p>
             </div>
-            <div class="col-4 text-center mt-0">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center mt-0">
                 <h4 class="font-weight-bold p-2 mb-4">Frequently asked questions</h4>
                 <div class="accordion" id="accordionExample">
                     <div class="card">
@@ -81,12 +81,12 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4 text-center mt-0">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center mt-0">
                 <form class="mt-0" method="POST" action="{% url 'contact' %}">
                     {% csrf_token %}
                     <h4 class="font-weight-bold p-2">How can we help?</h4>
                     {{ form|crispy }}
-                    <button type="submit" class="btn btn-danger">Submit</button>                    
+                    <button type="submit" class="btn btn-danger m-3">Submit</button>                    
                   </form>
             </div>
         </div>
