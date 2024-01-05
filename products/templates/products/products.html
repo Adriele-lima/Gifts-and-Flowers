@@ -39,6 +39,46 @@
                                     {% endif %}
                                     <div class="card-body pb-0 text-center">
                                         <p class="mb-0 font-weight-bold">{{ product.name }}</p>
+                                        {% if product.get_rating == 1 %}
+                                        <p><small>Rating {{ product.get_rating }}/5 <i class="fa-solid fa-star"><i
+                                                        class="fa-regular fa-star"></i><i
+                                                        class="fa-regular fa-star"></i><i
+                                                        class="fa-regular fa-star"></i><i
+                                                        class="fa-regular fa-star"></i></i></small>
+                                        </p>
+                                        {% elif product.get_rating == 2 %}
+                                        <p><small>Rating {{ product.get_rating }}/5 <i class="fa-solid fa-star"><i
+                                                        class="fa-solid fa-star"></i><i
+                                                        class="fa-regular fa-star"></i><i
+                                                        class="fa-regular fa-star"></i><i
+                                                        class="fa-regular fa-star"></i></i></small>
+                                        </p>
+                                        {% elif product.get_rating == 3 %}
+                                        <p><small>Rating {{ product.get_rating }}/5 <i class="fa-solid fa-star"><i
+                                                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                        class="fa-regular fa-star"></i><i
+                                                        class="fa-regular fa-star"></i></i></small>
+                                        </p>
+                                        {% elif product.get_rating == 4 %}
+                                        <p><small>Rating {{ product.get_rating }}/5 <i class="fa-solid fa-star"><i
+                                                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                        class="fa-solid fa-star"></i><i
+                                                        class="fa-regular fa-star"></i></i></small>
+                                        </p>
+                                        {% elif product.get_rating == 5 %}
+                                        <p><small>Rating {{ product.get_rating }}/5 <i class="fa-solid fa-star"><i
+                                                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                        class="fa-solid fa-star"></i><i
+                                                        class="fa-solid fa-star"></i></i></small>
+                                        </p>
+                                        {% else %}
+                                        <p><small>Rating {{ product.get_rating }}/5 <i class="fa-regular fa-star"><i
+                                                        class="fa-regular fa-star"></i><i
+                                                        class="fa-regular fa-star"></i><i
+                                                        class="fa-regular fa-star"></i><i
+                                                        class="fa-regular fa-star"></i></i></small>
+                                        </p>
+                                        {% endif %}
                                     </div>
                                     <div class="card-footer bg-white pt-0 border-0 text-center">
                                         <div class="row">
