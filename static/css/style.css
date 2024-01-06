@@ -106,8 +106,9 @@
 }
 
 .image-size {
+    width: auto;
     height: 200px;
-    width: 200px;
+    background-size: cover;
 }
 
 .btn-top {
