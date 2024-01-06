@@ -85,6 +85,7 @@ def view_product(request, product_id):
                 review.rating = rating
                 review.content = content
                 review.save()
+                messages.success(request, f'Successfully updated your review to product: {product.name}!')
             else:
                 review = Review.objects.create(
                     product=product,
@@ -92,6 +93,7 @@ def view_product(request, product_id):
                     content=content,
                     created_by=request.user
                 )
+                messages.success(request, f'Review successfully added to product: {product.name}!')
             return redirect(reverse('view_product', args=[product.id]))
 
     context = {
