@@ -363,4 +363,8 @@ select option[value=""] {
         display: flex;
         flex-direction: column;
     }
+
+    .home {
+        background-position: right !important;
+    }
 }
