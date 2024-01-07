@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /bag/
+Sitemap: https://gifts-and-flowers-6d75002e0957.herokuapp.com/sitemap.xml
