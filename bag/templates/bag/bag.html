@@ -17,7 +17,7 @@
                 <table class="table table-sm table-borderless">
                     {% for item in bag_items %}
                     <tr class="d-flex justify-content-around align-items-center mobile">
-                        <td class="p-3 col-2">
+                        <td class="p-3 col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12">
                             {% if item.product.image %}
                             <img class="bag_size_image" src="{{ item.product.image.url }}"
                                 alt="{{ item.product.name }}">
@@ -25,15 +25,15 @@
                             <img class="bag_size_image" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
                             {% endif %}
                         </td>
-                        <td class="p-3 col-4">
+                        <td class="p-3 col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12">
                             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                             <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
                         </td>
-                        <td class="p-3 col-2">
+                        <td class="p-3 col-xl-1 col-lg-1 col-md-12 col-sm-12 col-xs-12">
                             <p class="my-0"><strong>Price</strong></p>
                             <p class="my-0">€{{ item.product.price }}</p>
                         </td>
-                        <td class="py-3 col-2 adjust_qty_btn">
+                        <td class="py-3 col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 adjust_qty_btn">
                             <form class="form update-form qty-bag-form" method="POST"
                                 action="{% url 'adjust_bag' item.item_id %}">
                                 {% csrf_token %}

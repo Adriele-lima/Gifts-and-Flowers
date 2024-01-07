@@ -17,7 +17,7 @@
                 <table class="table table-sm table-borderless">
                     {% for item in wishlist %}
                     <tr class="d-flex justify-content-around align-items-center mobile">
-                        <td class="p-3 col-3">
+                        <td class="p-3 col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12">
                             {% if item.image %}
                             <a class="products-link" href="{% url 'view_product' item.id %}">
                                 <img class="bag_size_image" src="{{ item.image.url }}" alt="{{ item.name }}">
@@ -28,17 +28,17 @@
                             </a>
                             {% endif %}
                         </td>
-                        <td class="p-3 col-3">
+                        <td class="p-3 col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12">
                             <a class="products-link" href="{% url 'view_product' item.id %}">
                                 <p class="my-0"><strong>{{ item.name }}</strong></p>
                                 <p class="my-0 small text-muted text-break">SKU: {{ item.sku|upper }}</p>
                             </a>
                         </td>
-                        <td class="p-3 col-3">
+                        <td class="p-3 col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12">
                             <p class="my-0"><strong>Price</strong></p>
                             <p class="my-0">€{{ item.price }}</p>
                         </td>
-                        <td class="p-3 col-3">
+                        <td class="p-3 col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12">
                             <form action="{% url 'add_to_wishlist' item.id %}" method="POST">
                                 {% csrf_token %}
                                 <button type="submit" name="wishlist_btn" value="Add to wishlist"
