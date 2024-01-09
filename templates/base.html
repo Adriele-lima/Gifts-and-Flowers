@@ -29,7 +29,7 @@
       <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="{% url 'home' %}">
           <img src="{% static 'images/logo.png' %}" alt="gifts-and-flowers-logo"
-          class="navbar-logo img-fluid"/>
+          class="navbar-logo img-fluid">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -130,17 +130,17 @@
     {% endblock %}
 
     <footer class="footer">
-      <div class="accordion" id="accordionExample">
+      <div class="accordion" id="accordionFooter">
         <div class="card border-0">
-          <div class="card-header p-0" id="headingOne">
-            <h2 class="mb-0">
+          <div class="card-header p-0" id="footerOne">
+            <div class="mb-0">
               <button class="btn btn-link btn-block text-left text-dark footer rounded-0" type="button"
                 data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                <h4 class="text-uppercase">Stay in touch:</h4>
+                <p class="text-uppercase m-0 font-weight-bold">Stay in touch:</p>
               </button>
-            </h2>
+            </div>
           </div>
-          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div id="collapseOne" class="collapse" aria-labelledby="footerOne" data-parent="#accordionFooter">
             <div class="card-body">
               <a href="https://www.facebook.com/" target="_blank" class="footer-social-link text-muted" rel="noopener">
                 <i class="fab fa-facebook-square ms-3"></i> Follow us on facebook!
@@ -149,16 +149,16 @@
           </div>
         </div>
         <div class="card border-0">
-          <div class="card-header p-0" id="headingTwo">
-            <h2 class="mb-0">
+          <div class="card-header p-0" id="footerTwo">
+            <div class="mb-0">
               <button class="btn btn-link btn-block text-left collapsed text-dark footer" type="button"
                 data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                <h4 class="text-uppercase">Subscribe:</h4>
+                <p class="text-uppercase m-0 font-weight-bold">Subscribe:</p>
                 <small>Get exclusive offers and discount by subscribing to our monthly newsletter!</small>
               </button>
-            </h2>
+            </div>
           </div>
-          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <div id="collapseTwo" class="collapse" aria-labelledby="footerTwo" data-parent="#accordionFooter">
             <div class="card-body mobile">
               <div id="mc_embed_signup">
                 <form
@@ -206,11 +206,11 @@
       </div>
     </footer>
     {% block postloadjs %}
-    <script type="text/javascript">
+    <script>
       $('.toast').toast('show');
     </script>
-    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-    <script type="text/javascript">
+    <script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+    <script>
       (function ($) {
         window.fnames = new Array();
         window.ftypes = new Array();
@@ -229,7 +229,6 @@
       }(jQuery));
       var $mcj = jQuery.noConflict(true);
     </script>
-    </div>
     {% endblock %}
   </body>
 </html>
