@@ -137,7 +137,7 @@
     {{ block.super }}
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript">
+<script>
     $(document).ready(function() {
         $('.btn-top-link').click(function(e) {
             e.preventDefault(); 
@@ -146,7 +146,7 @@
     });
 </script>
 
-<script type="text/javascript">
+<script>
     $('#sort-selector').change(function() {
         var selector = $(this);
         var currentUrl = new URL(window.location);
