@@ -215,6 +215,52 @@ The key areas I would like to add to the site in the future are:
 
 ![Logout](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/signout_confirmation.png)
 
+## :heavy_check_mark: Testing
+
+### :round_pushpin: RESPONSIVENESS:
+
+- The deployed application was tested on multiple devices to check for responsiveness issues. The bootstrap classes were used to be as responsive as possible.
+
+![Responsive](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/responsive.png)
+
+### :round_pushpin: BROWSER COMPABILITY TESTING:
+
+The deployed project was tested on multiple browsers to check for compatibility issues and works as expected.
+
+- __Photo of Microsoft Edge:__
+      
+![Edge](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/edge.png)
+
+- __Photo of Firefox:__
+
+![Firefox](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/mozila.png)
+  
+- __Photo of Mobile:__
+
+![Mobile](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/mobile.png)
+
+
+### :round_pushpin: LIGHTHOUSE
+
+The deployed project was tested using the Lighthouse Audit tool to check for any major issues.
+
+![Light House](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/lighthouse.png)
+
+
+### :round_pushpin: Agile and Milestone
+
+![Agile](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/agile.png)
+
+![Milestones](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/milestones.png)
+
+### :round_pushpin: Bugs
+
+:x: One bug found when testing the deployed site. As I created more models after I deployed the website, when I tested my contact us form, it was giving an error as I didn't have the env file and the migrations was only done on my local base.
+
+:white_check_mark: After I add the env file with the postgres Database and run the migrations again, the deployed website was updated with the new models and the form started to work.
+
+
+
 The useful support needed came from:
 
 [Code Institute](https://codeinstitute.net/ie/)
