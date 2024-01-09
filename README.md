@@ -259,7 +259,226 @@ The deployed project was tested using the Lighthouse Audit tool to check for any
 
 :white_check_mark: After I add the env file with the postgres Database and run the migrations again, the deployed website was updated with the new models and the form started to work.
 
+### :round_pushpin: CODE VALIDATION:
 
+### :round_pushpin: HTML
+
+[HTML Validator](https://validator.w3.org/nu/) to validate all HTML files. The result for each page is listed below:
+
+- __Home page__
+
+:x: On home page I found some simple errors:
+ 
+![Html_home_error1_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/html-errors-home.png)
+
+![Html_home_error2_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/html-errors-home2.png)
+
+:white_check_mark: All resolved by removing some text that wasn't needed and some items not allowed.
+
+![Html_home page_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/html-home.png)
+
+- __View list of products__
+
+:white_check_mark: No errors found.
+
+![Html_view_list_of_products_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/html-products.png)
+
+- __Product View__
+
+:white_check_mark: No errors found.
+
+![Html_product_view_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/html-product-view.png)
+
+- __Product Management__
+
+:white_check_mark: No errors found, only one info that I couldn't find to fix.
+
+[Html_product_management_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/html-product-management.png)
+
+- __Shopping Bag__
+
+:white_check_mark: No errors found.
+
+!Html_shopping_bag_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/html-bag.png)
+
+- __Checkout__
+
+:white_check_mark: No errors found.
+
+![Html_checkout_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/html-checkout.png)
+
+- __Contact Us__
+
+:x: On contact page I found some simple errors:
+
+![Html_contact_error1_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/html-errors-contact1.png)
+![Html_contact_error2_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/html-errors-contact2.png)
+
+:white_check_mark: All resolved by removing some duplicated IDs and the other ones were fixed on the base template.
+
+![Html_contact_us_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/html-contact-us.png)
+
+- __Profile__
+
+:white_check_mark: No errors found, only one info that I couldn't find to fix.
+
+![Html_profile_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/html-my-profile.png)
+
+- __Wishlist__
+
+:white_check_mark: No errors found.
+
+![Html_wishlist_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/html-wishlist.png)
+
+### :round_pushpin: CSS
+
+[The CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator/) was used to validate the CSS file.
+ 
+:white_check_mark: No errors found.
+
+![CSS_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/css-test.png)
+
+### :round_pushpin: JAVASCRIPT
+
+[The JShint Validator](https://jshint.com/) was used to validate the JavaScript file.
+
+- __Add Product__
+
+:white_check_mark: No errors found.
+
+![Javascript_add_product_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/javascript-add-product.png)
+
+- __Edit Product__
+
+:white_check_mark: No errors found.
+
+![Javascript_edit_productt_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/javascript-edit-product.png)
+
+- __Products__
+
+:white_check_mark: No errors found.
+
+![Javascript_products_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/javascript-products.png)
+
+- __View Prduct__
+
+:white_check_mark: No errors found.
+
+![Javascript_view_product_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/javascript-view-product.png)
+
+- __Shopping Bag__
+
+:white_check_mark: No errors found.
+
+![Javascript_shopping_bag_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/javascript-bag.png)
+
+- __Checkout__
+
+:white_check_mark: No errors found.
+
+![Javascript_checkout_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/javascript-checkout.png)
+
+### :round_pushpin: PYTHON:
+
+[The Code Institute Python Linterwas](https://pep8ci.herokuapp.com/) was used to validate all Python files.
+
+- __E-commerce - Settings__
+
+:white_check_mark: No errors found.
+
+![Python_settings_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/python-ecommerce-settings.png)
+
+- __Bag - Views__
+
+:white_check_mark: No errors found.
+
+![Python_bag_views_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/python-bag-views.png)
+
+- __Checkout - Forms__
+
+:white_check_mark: No errors found.
+
+![Python_checkout_forms_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/python-checkout-forms.png)
+
+- __Checkout - Models__
+
+:white_check_mark: No errors found.
+
+![Python_checkout_models_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/python-checkout-models.png)
+
+- __Checkout - Views__
+
+:white_check_mark: No errors found.
+
+![Python_checkout_views_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/python-checkout-views.png)
+
+- __Contact us - Forms__
+
+:white_check_mark: No errors found.
+
+![Python_contact_forms_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/python-contact-us-forms.png)
+
+- __Contact us - Models__
+
+:white_check_mark: No errors found.
+
+![Python_contact_models_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/python-contact-us-models.png)
+
+- __Contact us - Views__
+
+:white_check_mark: No errors found.
+
+![Python_contact_views_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/python-contact-us-views.png)
+
+- __Home - Views__
+
+:white_check_mark: No errors found.
+
+![Python_home_views_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/python-home-views.png)
+
+- __Products - Forms__
+
+:white_check_mark: No errors found.
+
+![Python_products_forms_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/python-products-forms.png)
+
+- __Products - Models__
+
+:white_check_mark: No errors found.
+
+![Python_products_models_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/python-profiles-models.png)
+
+- __Products - Views__
+
+:white_check_mark: No errors found.
+
+![Python_products_views_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/python-products-views.png)
+
+- __Profiles - Forms__
+
+:white_check_mark: No errors found.
+
+![Python_profiles_forms_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/python-profiles-forms.png)
+
+- __Profiles - Models__
+
+:white_check_mark: No errors found.
+
+![Python_profiles_models_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/python-profiles-models.png)
+
+- __Profiles - Views__
+
+:white_check_mark: No errors found.
+
+![Python_profiles_views_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/python-profiles-views.png)
+
+- __Wishlist - Views__
+
+:white_check_mark: No errors found.
+
+![Python_wishlist_views_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/python-wishlist-views.png)
+
+## :heavy_check_mark: Credits
 
 The useful support needed came from:
 
