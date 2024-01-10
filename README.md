@@ -8,6 +8,7 @@ Welcome to [Gifts and Flowers!](https://gifts-and-flowers-6d75002e0957.herokuapp
     * [The Strategy Plane](#round_pushpin-the-strategy-plane)
     * [The Sites Ideal User](#round_pushpin-the-sites-ideal-user)
     * [Site Goals](#round_pushpin-site-goals)
+    * [Facebook Page](#round_pushpin-facebook-page)
     * [User Stories](#round_pushpin-user-stories)
     * [The Scope Planned](#round_pushpin-the-scope-plane)
     * [Future Enhancements](#round_pushpin-future-enhancements)
@@ -50,6 +51,12 @@ design of the site provide the user with a fun and enjoyable environment.
 * Find the Perfect Gift: Users want to discover a thoughtful and appropriate gift for the occasion, whether it's a birthday, anniversary, wedding, or another celebration. The website should offer a wide variety of options for different tastes and preferences.
 * Budget-Friendly Options: Many users have a budget in mind when shopping for gifts. The website should cater to users seeking budget-friendly options by providing filters, sorting options, and a range of products at various price points.
 * Efficient Checkout Process: Users want a straightforward and secure checkout process. Simplifying the steps involved in placing an order contribute to a positive user experience.
+
+### :round_pushpin: Facebook Page
+
+* Follow us on our [Facebook Page](https://www.facebook.com/gifts.and.flowers.2024/)
+
+![Facebook](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/facebook.png)
 
 ### :round_pushpin: User stories
 
