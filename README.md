@@ -5,6 +5,7 @@ Welcome to [Gifts and Flowers!](https://gifts-and-flowers-6d75002e0957.herokuapp
 ## Table of Contents
 
 * [UX Design](#heavy_check_mark-ux-design)
+    * [The Requirements for an E-commerce Business Model](#round_pushpin-the-requirements-for-an-e-commerce-business-model)
     * [The Strategy Plane](#round_pushpin-the-strategy-plane)
     * [The Sites Ideal User](#round_pushpin-the-sites-ideal-user)
     * [Site Goals](#round_pushpin-site-goals)
@@ -32,6 +33,75 @@ Welcome to [Gifts and Flowers!](https://gifts-and-flowers-6d75002e0957.herokuapp
 
 
 ## :heavy_check_mark: UX Design
+
+### :round_pushpin: The Requirements for an E-commerce Business Model
+
+- Market Analysis:
+
+Conduct thorough market research to understand the demand for gifts and flowers in the target demographic.
+Identify key competitors and analyze their strengths, weaknesses, opportunities, and threats (SWOT analysis).
+
+- Target Audience:
+
+Define the target audience for the gifts and flowers e-commerce application, considering factors like age, gender, interests, and buying behavior.
+
+- Product Catalog:
+
+Develop a comprehensive catalog of gifts and flowers, ensuring a diverse range of products to cater to different occasions and customer preferences.
+
+- User-Friendly Interface:
+
+Design an intuitive and user-friendly interface to enhance the shopping experience.
+Implement easy navigation, clear product categorization, and a seamless checkout process.
+
+- Mobile Responsiveness:
+
+Ensure the e-commerce platform is optimized for mobile devices to accommodate users who prefer shopping on smartphones and tablets.
+
+- Secure Payment Gateway:
+
+Integrate a secure and reliable payment gateway to facilitate safe transactions.
+Provide multiple payment options, including credit/debit cards, digital wallets, and other popular methods.
+
+- Order Management System:
+
+Implement an efficient order management system to track orders from placement to delivery.
+Provide real-time order updates and shipment tracking to enhance transparency.
+
+- Customer Support:
+
+Offer responsive customer support through multiple channels (e.g., live chat, email, phone) to address inquiries, concerns, and provide assistance.
+
+- Marketing Strategies:
+
+Develop a comprehensive marketing plan to promote the e-commerce platform.
+Utilize social media, email marketing, and search engine optimization (SEO) to increase brand visibility.
+
+- Personalization:
+
+Implement personalized recommendations based on customer preferences and purchase history.
+Offer customization options for gifts to enhance the personal touch.
+
+- Loyalty Programs:
+
+Introduce loyalty programs to encourage repeat purchases.
+Reward customers with discounts, exclusive deals, or points for their loyalty.
+
+- Reviews and Ratings:
+
+Include a review and rating system for products to build trust and credibility.
+Encourage customers to leave feedback, and respond promptly to reviews.
+
+- Logistics and Delivery:
+
+Establish reliable logistics and delivery partners to ensure timely and secure delivery of gifts and flowers.
+Clearly communicate delivery timelines and options to customers.
+
+- Legal and Compliance:
+
+Ensure compliance with e-commerce regulations and data protection laws.
+Clearly outline terms and conditions, privacy policies, and return/exchange policies.
+
 
 ### :round_pushpin: The Strategy Plane
 
@@ -95,6 +165,8 @@ The key areas I would like to add to the site in the future are:
 * The ability for users to filter products by rating
 * The ability for users to pay with apple pay and other types of payment
 * The ability for users to login via social networks such as google or facebook
+* The ability for user to have a personalised page for tracking their orders
+* Implement data protection agreements, so users can have access
   
 ## :heavy_check_mark: Technologies
 
