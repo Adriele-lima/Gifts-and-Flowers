@@ -478,6 +478,333 @@ The deployed project was tested using the Lighthouse Audit tool to check for any
 
 ![Python_wishlist_views_test](https://github.com/Adriele-lima/Gifts-and-Flowers/blob/main/static/images/python-wishlist-views.png)
 
+## :heavy_check_mark: Deployment
+
+### :round_pushpin: How to Fork
+
+To fork the repository:
+
+1. Log in (or sign up) to Github.
+
+2. Go to the repository for this project.
+
+3. Click the Fork button in the top right corner.
+   
+### :round_pushpin: How to deploy
+
+How to deploy the repository:
+
+1. On terminal:
+
+   - Install all the necessary applications:
+    
+       - Install dj_database_url and psycopg2:
+   
+               pip3 install dj_database_url==0.5.0 psycopg2
+   
+       - Install Django and gunicorn:
+   
+               pip3 install 'django<4' gunicorn
+
+      - Install storages package:
+    
+     		      pip3 install django-storages
+
+       - Create requirements file:
+   
+               pip3 freeze --local > requirements.txt
+   
+2. Create the new Database:
+
+   - In your settings.py file, import dj_database_url underneath the import for os:
+     
+      	   import os
+      	   import dj_database_url
+
+   - Scroll to the DATABASES section and update it to the following code, so that the original connection to sqlite3 is commented out and we connect to the new ElephantSQL database instead. Paste in your ElephantSQL database URL in the position indicated:
+     
+            # DATABASES = {
+      	   #     'default': {
+      	   #         'ENGINE': 'django.db.backends.sqlite3',
+      	   #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+      	   #     }
+      	   # }
+           
+      	   DATABASES = {
+      	   'default': dj_database_url.parse('your-database-url-here')
+      	   }
+   **DO NOT commit this file with your database string in the code, this is temporary so that we can connect to the new database and make migrations. We will remove it in a moment.**
+
+   - In the terminal, run the showmigrations command to confirm you are connected to the external database:
+
+           python3 manage.py showmigrations
+   - If you are, you should see a list of all migrations, but none of them are checked off.
+
+   - Migrate your database models to your new database:
+
+           python3 manage.py migrate
+
+   - Load in the fixtures. Please note the order is very important here. We need to load categories first:
+
+           python3 manage.py loaddata categories
+
+   - Then products, as the products require a category to be set:
+
+           python3 manage.py loaddata products
+
+   - Create a superuser for your new database:
+
+           python3 manage.py createsuperuser
+
+   - Follow the steps to create a your superuser username and password. The email address can be left blank.
+   - Finally, to prevent exposing our database when we push to GitHub, your DATABASE in the settings.py file should look like this:
+
+            if 'DATABASE_URL' in os.environ:
+             DATABASES = {
+              'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+             }
+            else:
+              DATABASES = {
+                 'default': {
+                     'ENGINE': 'django.db.backends.sqlite3',
+                     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+                 }
+             }
+
+
+3.	On [Elephantsql](https://customer.elephantsql.com/login):
+     - Log in/or create an account to access your ElephantSQL account
+     - Click “Create New Instance”
+     - Set up your plan:
+        - Give your plan a Name (this is commonly the name of the project)
+        - Select the Tiny Turtle (Free) plan
+        - You can leave the Tags field blank
+     - Click “Select Region”
+     - Click “Review”
+     - Return to the ElephantSQL dashboard and click on the database instance name for this project
+     - Copy your ElephantSQL database URL using the Copy icon. It will start with postgres://
+  
+4. On [AWS - Amazon](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fs3.console.aws.amazon.com%2Fs3%2Fhome%3Fregion%3Deu-north-1%26state%3DhashArgs%2523%26isauthcode%3Dtrue&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fs3&forceMobileApp=0&code_challenge=3nuR8Bl59qVf9AK1xcJXvIq-d1MAld6tTuy2SuRGdXI&code_challenge_method=SHA-256):
+      - Log in/or create an account to access your AWS account
+      - On AWS page go to S3
+      - Click on create new bucket
+      - Create a name (best to be the same as Heroku) and select region.
+      - Select ACLs Enabled and Bucket owner preferred
+      - Deselect all "Block all puclic access"
+      - Confirm the yellow alert
+      - Click on create bucket
+      - Click on the new bucket
+      - Click on the Properties tab
+      - Scroll to the bottom of the page and on static website hosting click on edit
+      - Select “enable” static website hosting, then add the text “index.html” and “error.html” to index document
+      - Save changes
+      - Still on bucket, click on permissions tab
+      - Scroll to the bottom of the page, on CORS Cross-origin resource sharing (CORS), click on edit and paste the below then save.
+
+                  [
+              {
+                  "AllowedHeaders": [
+                      "Authorization"
+                  ],
+                  "AllowedMethods": [
+                      "GET"
+                  ],
+                  "AllowedOrigins": [
+                      "*"
+                  ],
+                  "ExposeHeaders": []
+              }
+            ]
+      
+      - On Bucket policy click on edit and click o policy generator
+      - It will open a new tap, and then needs to fill the below:
+         - Type of policy: S3 Bucket policy
+         - Principal: *
+         - Action: Get object
+         - ARN: Copy from the AWS page on bucket policy
+      - Click add statement and then generate policy
+      - Copy the policy
+      - Paste the policy on the bucket page, add “/*” at the end of resource link and save.
+      - On Access control list (ACL), click on edit and select everyone (public access)
+      - Select the “I understand box” and save.
+      - Now, search for IAM and click on the dashboard click on User groups
+      - Give it a name and press create group
+      - On the dashboard click on policies and create policy
+      - Click on JSON then on import policy
+      - Write “S3” on the search menu and select AmazonS3FullAccess then click on Import policy
+      - Add the ARN (From bucket page) on the resource twice but on the second link add “/*” and the click on next
+      - Give the policy a name and a description and click on create policy
+      - Go back to User groups, click on the group you created and then click on permissions, add permissions and attach policies.
+      - Find you policy by the name and attach
+      - On the dashboard click on users.
+      - Create a new user
+      - Give the user a name and click next
+      - Select the group and click next and create user
+      - On the users menu, click on the user you created
+      - Click on create access key
+      - Select application running on an AWS compute service, click on the box “I understand” and click next
+      - Leave the description blank and click on create access key
+      - Download the CSV file
+      - On the CSV file from AWS you will find the SECRET KEY and ACCESS KEY, that needs to be added on Heroku as well the USE AWS set to TRUE.
+
+5. On [Stripe](https://stripe.com/ie):
+     
+     - Log in/or create an account to access your Stripe account
+     - On your dashboard you will have your test API key that you will need to add on your Heroku.
+
+6.	On [Heroku](https://id.heroku.com/login):
+     - Login/or create an account to access your Heroku account
+     - Create new Heroku App
+     - Open the settings tab
+     - Click Reveal Config Vars
+         - Add a Config Var called DATABASE_URL: The value should be the ElephantSQL database url you copied from step 3.
+         - Add a Config Var called MY_SECRET_KEY: The value should be of your choice, but keep ot secret. (Should be the same as set on your env.py file)
+         - Add a config Var called AWS_ACCESS_KEY_ID: The value should be the AWS access key from step 4.
+         - Add a config Var called AWS_SECRET_ACCESS_KEY: The value should be the AWS secret access key from step 4.
+         - Add a config Var called STRIPE_PUBLIC_KEY: The value should be the Stripe public key from step 5.
+         - Add a config Var called STRIPE_SECRET_KEY: The value should be the Stripe secret key from step 5.
+         - Add a config Var called USE_AWS: the value should be "True"
+
+7. On your settings.py:
+
+     - Reference env.py by adding on the top:
+       
+           import os
+           import dj_database_url
+           if os.path.isfile("env.py"):
+           import env
+
+     - Remove the insecure secret key (if any) and replace with:
+       
+           SECRET_KEY = os.environ.get('SECRET_KEY')
+            
+     - Add new DATABASES Section:
+  
+           if 'DATABASE_URL' in os.environ:
+             DATABASES = {
+              'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+             }
+            else:
+              DATABASES = {
+                 'default': {
+                     'ENGINE': 'django.db.backends.sqlite3',
+                     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+                 }
+             }
+    
+      - Add ‘storages’ to installed apps:
+  
+            INSTALLED_APPS = [
+                'django.contrib.admin',
+                'django.contrib.auth',
+                'django.contrib.contenttypes',
+                'django.contrib.sessions',
+                'django.contrib.messages',
+                'django.contrib.staticfiles',
+                'django.contrib.sites',
+                'allauth',
+                'allauth.account',
+                'allauth.socialaccount',
+                'home',
+                'products',
+                'bag',
+                'checkout',
+                'profiles',
+            
+                # Other
+                'crispy_forms',
+                'storages',
+
+     - Add AWS section for the static files and media:
+  
+             if 'USE_AWS' in os.environ:
+                # Cache control
+                AWS_S3_OBJECT_PARAMETERS = {
+                    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+                    'CacheControl': 'max-age=94608000',
+                }
+            
+                # Bucket Config
+                AWS_STORAGE_BUCKET_NAME = 'gifts-and-flowers-6d75002e0957'
+                AWS_S3_REGION_NAME = 'eu-west-1'
+                AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+                AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+                AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+            
+                # Static and media files
+                STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+                STATICFILES_LOCATION = 'static'
+                DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+                MEDIAFILES_LOCATION = 'media'
+            
+                # Override static and media URLs in production
+                STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+                MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+                 - Tell Django to use Cloudinary to store media and static files:
+     
+               STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+               STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+               STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+               
+               MEDIA_URL = '/media/'
+               DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+     - Link file to the templates directory in Heroku:
+  
+            TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+
+     - Change the templates directory to TEMPLATES_DIR:
+  
+           TEMPLATES = [
+                {
+                   …,
+                    'DIRS': [TEMPLATES_DIR],
+                   …,
+                        ],
+                    },
+                },
+            ]
+     - Add Heroku Hostname to ALLOWED_HOSTS:
+
+           ALLOWED_HOSTS = ["**PROJ_NAME**.herokuapp.com", "**YOUR_HOSTNAME**"]
+
+8. Create a Procfile on the top level directory, and add the code below inside:
+
+        web: gunicorn **PROJ_NAME**.wsgi
+
+9. Create the env.py file on the top level directory, and add the secret keys:
+
+       import os
+   
+         os.environ['DATABASE_URL'] = 'your postgres key'
+         
+         os.environ['SECRET_KEY'] = 'your secret key7'
+         
+         os.environ['AWS_ACCESS_KEY_ID'] = 'AWS key'
+         
+         os.environ['AWS_SECRET_ACCESS_KEY'] = 'AWS secret key'
+             
+         os.environ['STRIPE_PUBLIC_KEY'] = 'your stripe public key'
+         
+         os.environ['STRIPE_SECRET_KEY'] = 'stripe secret key'
+         
+         os.environ['USE_AWS'] = 'True'
+       
+    
+10. Make sure you have debug set to False on Settings.py:
+
+        DEBUG = False
+
+11. Commit your changes to github:
+
+        git add .
+        git commit -m "YOUR MESSAGE"
+        git push
+
+12. On Heroku, you can manually deploy it our set up an automatic deployment.
+   
+13. The live link can be found here [Gifts and Flowers](https://gifts-and-flowers-6d75002e0957.herokuapp.com/)
+
 ## :heavy_check_mark: Credits
 
 The useful support needed came from:
